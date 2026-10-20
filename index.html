@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10243a">
-  <meta name="description" content="A scenario-based CV readiness audit from Noel Talent Services. Get practical guidance to improve your CV.">
-  <title>CV Readiness Audit | Noel Talent Services</title>
+  <meta name="theme-color" content="#080907">
+  <meta name="description" content="A 15-scenario career readiness audit covering CV optimization, LinkedIn profile improvement and interview preparation from Noel Talents Limited.">
+  <title>Career Readiness Audit | Noel Talents Limited</title>
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="#" aria-label="Noel Talent Services home">
-      <span class="brand-mark" aria-hidden="true">N</span>
+      <img class="brand-logo" src="logo.png" alt="Noel Talents Limited logo">
       <span><strong>NOEL</strong><small>TALENT SERVICES</small></span>
     </a>
     <div class="header-right">
@@ -114,8 +115,14 @@
             <section><h3><span class="section-icon improve">↗</span> Areas to improve</h3><ul id="improvement-list"></ul></section>
           </div>
           <section class="action-section"><div class="action-heading"><span class="section-icon improve">◎</span><div><h3>Your priority action plan</h3><p>Start with the highest-impact changes.</p></div></div><ol id="action-list"></ol></section>
+          <section id="perfect-score-cta" class="perfect-score-cta hidden" aria-live="polite">
+            <p class="eyebrow">PERFECT SCORE</p>
+            <h3>Excellent work. You scored 100%.</h3>
+            <p>You have demonstrated strong judgement across CV readiness, LinkedIn optimization and interview preparation. You may submit your CV for consideration when a suitable opportunity becomes available. Submission does not guarantee placement.</p>
+            <a class="btn btn-perfect" href="https://docs.google.com/forms/d/e/1FAIpQLSd9N9L9SwWE0hlQIGOVpWFJ1YKf87RTM4ChR6XfEn_ZrmgMJQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">Submit your CV for future opportunities ↗</a>
+          </section>
           <div class="report-disclaimer">This is a self-assessment based on your scenario responses. It is educational guidance, not an evaluation of an uploaded CV, a prediction of hiring outcomes, or a guarantee of interviews.</div>
-          <div class="report-footer"><div class="footer-brand"><span class="brand-mark small-mark">N</span><span><strong>NOEL TALENT SERVICES</strong><small>CV AUDIT & OPTIMIZATION</small></span></div><div><strong>Need expert support?</strong><br><a href="mailto:HR@noeltalents.com">HR@noeltalents.com</a></div></div>
+          <div class="report-footer"><div class="footer-brand"><img class="footer-logo" src="logo.png" alt="Noel Talents Limited logo"><span><strong>NOEL TALENT SERVICES</strong><small>CV AUDIT & OPTIMIZATION</small></span></div><div><strong>Need expert support?</strong><br><a href="mailto:HR@noeltalents.com">HR@noeltalents.com</a></div></div>
         </div>
       </div>
 
@@ -138,8 +145,8 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="footer-inner"><span>© <span id="year"></span> Noel Talent Services</span><span>Practical career guidance, one step at a time.</span><a href="mailto:HR@noeltalents.com">HR@noeltalents.com</a></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>© <span id="year"></span> Noel Talents Limited</span><span>Practical career guidance, one step at a time.</span><a href="mailto:HR@noeltalents.com">HR@noeltalents.com</a><nav class="social-links" aria-label="Follow Noel Talents Limited"><a href="https://www.linkedin.com/company/noel-talents-limited/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a href="https://www.instagram.com/noeltalentsltd/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a><a href="https://x.com/NoelTalents/" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a></nav></div></footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
