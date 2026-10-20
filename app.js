@@ -87,6 +87,24 @@
     const s=currentScenario();
     state.answers[s.id]={optionIndex:index};
     const option=s.options[index];
+    // Conditional routing: lower-scoring answers bring a related skill area forward;
+    // strong answers prioritise an unassessed complementary area. All 15 scenarios remain included.
+    const remaining = state.order.slice(state.index + 1).filter(item => !state.answers[item.id]);
+    const answeredCategories = new Set(state.order.filter(item => state.answers[item.id]).map(item => item.category));
+    const sameCategory = remaining.filter(item => item.category === s.category);
+    const complementary = remaining.filter(item => item.category !== s.category && !answeredCategories.has(item.category));
+    const other = remaining.filter(item => !sameCategory.includes(item) && !complementary.includes(item));
+    let routed = remaining;
+    if (option.score <= 1 && sameCategory.length) {
+      routed = [...sameCategory, ...remaining.filter(item => !sameCategory.includes(item))];
+      if ($("routing-hint")) $("routing-hint").textContent = "We’ll bring a related skill area forward so you can focus on what needs strengthening.";
+    } else if (option.score >= 3 && complementary.length) {
+      routed = [...complementary, ...remaining.filter(item => !complementary.includes(item))];
+      if ($("routing-hint")) $("routing-hint").textContent = "Good choice. We’ll move to a complementary skill area to build a rounded picture.";
+    } else {
+      if ($("routing-hint")) $("routing-hint").textContent = "Your next scenario is selected to keep the assessment balanced.";
+    }
+    state.order = [...state.order.slice(0, state.index + 1), ...routed];
     $("answer-options").querySelectorAll(".answer-option").forEach((button,i)=>button.setAttribute("aria-pressed",String(i===index)));
     renderFeedback(option);
     $("feedback").classList.remove("hidden");
@@ -114,7 +132,7 @@
       const a=state.answers[s.id]; if (!a) return;
       const opt=s.options[a.optionIndex];
       bucket[s.dimension].earned+=opt.score;
-      bucket[s.dimension].max+=3;
+      bucket[s.dimension].max+=Math.max(...s.options.map(option=>option.score));
       bucket[s.dimension].count++;
       answered.push({scenario:s,option:opt});
     });
