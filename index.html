@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10243a">
+  <meta name="description" content="A scenario-based CV readiness audit from Noel Talent Services. Get practical guidance to improve your CV.">
+  <title>CV Readiness Audit | Noel Talent Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Noel Talent Services home">
+      <span class="brand-mark" aria-hidden="true">N</span>
+      <span><strong>NOEL</strong><small>TALENT SERVICES</small></span>
+    </a>
+    <div class="header-right">
+      <span class="header-tag">CAREER TOOLS</span>
+      <a class="header-email" href="mailto:HR@noeltalents.com">HR@noeltalents.com</a>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section id="welcome" class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER, MORE CLEARLY PRESENTED</p>
+        <h1>Is your CV ready for<br><span>the next opportunity?</span></h1>
+        <p class="hero-intro">Work through realistic recruitment scenarios, understand what hiring teams look for, and leave with a focused plan to improve your CV.</p>
+        <div class="hero-points">
+          <span><b aria-hidden="true">✓</b> Scenario-based assessment</span>
+          <span><b aria-hidden="true">✓</b> Personalized action plan</span>
+          <span><b aria-hidden="true">✓</b> Printable report and results card</span>
+        </div>
+        <button id="start-btn" class="btn btn-primary btn-large">Start my CV audit <span aria-hidden="true">→</span></button>
+        <p class="microcopy">About 5–8 minutes · No CV upload required</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="resume-sheet">
+          <div class="resume-top"><span></span><span></span><span></span></div>
+          <div class="resume-person"></div><div class="resume-line line-long"></div><div class="resume-line line-short"></div>
+          <div class="resume-section"></div><div class="resume-line"></div><div class="resume-line line-mid"></div>
+          <div class="resume-section"></div><div class="resume-line"></div><div class="resume-line line-short"></div>
+          <div class="resume-check">✓</div>
+        </div>
+        <div class="floating-label label-top"><span class="mini-check">✓</span> Clear achievements</div>
+        <div class="floating-label label-bottom"><span class="mini-dot"></span> Role-relevant skills</div>
+      </div>
+    </section>
+
+    <section id="profile" class="panel form-panel hidden" aria-labelledby="profile-title">
+      <div class="section-head">
+        <div><p class="eyebrow">FIRST, A LITTLE CONTEXT</p><h2 id="profile-title">Personalize your audit</h2><p>We will use your answers to select relevant scenarios and recommendations.</p></div>
+        <span class="step-pill">START HERE</span>
+      </div>
+      <form id="profile-form">
+        <div class="form-grid">
+          <div class="field"><label for="candidate-name">Your name <span class="optional">(optional)</span></label><input id="candidate-name" name="name" autocomplete="name" placeholder="e.g. Alex Okon"></div>
+          <div class="field"><label for="candidate-email">Email address <span class="optional">(optional)</span></label><input id="candidate-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><small>Used to prefill an enquiry email only. This version does not send or store email addresses.</small></div>
+          <div class="field"><label for="experience">Experience level</label><select id="experience" name="experience" required><option value="">Choose your level</option><option value="student">Student or recent graduate</option><option value="early">Early career (0–3 years)</option><option value="mid">Mid-career (4–9 years)</option><option value="senior">Senior or leadership (10+ years)</option><option value="career-change">Changing career or returning to work</option></select></div>
+          <div class="field"><label for="goal">Main career goal</label><select id="goal" name="goal" required><option value="">Choose your goal</option><option value="first-job">Get my first role</option><option value="new-role">Find a new role</option><option value="promotion">Move into a more senior role</option><option value="career-change">Change career or industry</option><option value="return">Return to work</option><option value="general">Improve my overall CV</option></select></div>
+          <div class="field field-wide"><label for="target-role">Target role or industry <span class="optional">(optional)</span></label><input id="target-role" name="targetRole" placeholder="e.g. HR Officer, Finance, Customer Success"></div>
+        </div>
+        <div class="privacy-note"><span aria-hidden="true">ⓘ</span><p>Your responses are processed in this browser. Do not include confidential employer information. This tool offers general career guidance, not a hiring guarantee.</p></div>
+        <div class="form-actions"><button type="button" id="back-welcome" class="btn btn-secondary">Back</button><button class="btn btn-primary" type="submit">Begin scenarios <span aria-hidden="true">→</span></button></div>
+      </form>
+    </section>
+
+    <section id="audit" class="panel audit-panel hidden" aria-labelledby="question-title">
+      <div class="audit-topline"><span id="question-counter">QUESTION 1 OF 12</span><button class="text-button" id="exit-audit" type="button">Exit audit</button></div>
+      <div class="progress-track" role="progressbar" aria-label="Audit progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><span id="progress-fill"></span></div>
+      <div class="question-layout">
+        <div class="question-main">
+          <p id="question-category" class="eyebrow">CV STRATEGY</p>
+          <h2 id="question-title" tabindex="-1">Scenario title</h2>
+          <p id="question-story" class="question-story"></p>
+          <p id="question-prompt" class="question-prompt"></p>
+          <div id="answer-options" class="answer-options" role="group" aria-label="Answer options"></div>
+          <div id="feedback" class="feedback hidden" aria-live="polite">
+            <div class="feedback-title"><span id="feedback-icon">✓</span><strong id="feedback-heading">Good thinking</strong></div>
+            <p id="feedback-text"></p>
+            <div class="feedback-tip"><strong>CV tip</strong><span id="feedback-tip"></span></div>
+          </div>
+          <div class="question-actions"><button id="previous-question" type="button" class="btn btn-secondary">← Previous</button><button id="next-question" type="button" class="btn btn-primary" disabled>Continue →</button></div>
+        </div>
+        <aside class="question-aside">
+          <div class="aside-icon" aria-hidden="true">✦</div>
+          <h3>Why this matters</h3>
+          <p>Recruiters review your CV for relevance, clear evidence and a quick understanding of the value you bring.</p>
+          <div class="aside-divider"></div>
+          <p class="aside-small">A short note from Noel Talent Services</p>
+          <p class="aside-quote">“Your CV should make it easy to understand what you do well and how it relates to the role.”</p>
+          <a href="mailto:HR@noeltalents.com?subject=CV%20Audit%20Question" class="aside-link">Need help? Email our team ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="results" class="hidden" aria-labelledby="results-title">
+      <div class="results-header">
+        <div><p class="eyebrow">YOUR PERSONALIZED SUMMARY</p><h2 id="results-title">Your CV readiness report</h2><p id="results-intro">Your answers point to several practical opportunities to strengthen your CV.</p></div>
+        <span class="report-stamp">NOEL TALENT SERVICES</span>
+      </div>
+      <div id="report-content" class="report-card panel">
+        <div class="report-banner">
+          <div><p class="eyebrow light-eyebrow">CV READINESS AUDIT</p><h3 id="report-name">Your report</h3><p id="report-target">Career goal and target role</p></div>
+          <div class="score-circle" id="score-circle" aria-label="Readiness score"><div><strong id="overall-score">0</strong><span>OUT OF 100</span></div></div>
+        </div>
+        <div class="report-body">
+          <div class="score-summary"><div><span id="readiness-label" class="readiness-label">Your readiness</span><h3 id="readiness-title">A practical starting point</h3></div><p id="readiness-description"></p></div>
+          <div class="category-section"><h3>Assessment breakdown</h3><div id="category-scores" class="category-scores"></div></div>
+          <div class="report-columns">
+            <section><h3><span class="section-icon positive">✓</span> What you are doing well</h3><ul id="strength-list"></ul></section>
+            <section><h3><span class="section-icon improve">↗</span> Areas to improve</h3><ul id="improvement-list"></ul></section>
+          </div>
+          <section class="action-section"><div class="action-heading"><span class="section-icon improve">◎</span><div><h3>Your priority action plan</h3><p>Start with the highest-impact changes.</p></div></div><ol id="action-list"></ol></section>
+          <div class="report-disclaimer">This is a self-assessment based on your scenario responses. It is educational guidance, not an evaluation of an uploaded CV, a prediction of hiring outcomes, or a guarantee of interviews.</div>
+          <div class="report-footer"><div class="footer-brand"><span class="brand-mark small-mark">N</span><span><strong>NOEL TALENT SERVICES</strong><small>CV AUDIT & OPTIMIZATION</small></span></div><div><strong>Need expert support?</strong><br><a href="mailto:HR@noeltalents.com">HR@noeltalents.com</a></div></div>
+        </div>
+      </div>
+
+      <section class="share-panel panel" aria-labelledby="share-title">
+        <div><p class="eyebrow">KEEP YOUR RESULTS</p><h3 id="share-title">Take your report with you</h3><p>Print or save the report as a PDF, download a shareable results card, or copy a text summary.</p></div>
+        <div class="share-actions"><button id="print-report" class="btn btn-primary">Print / Save PDF</button><button id="download-card" class="btn btn-secondary">Download results card</button><button id="copy-summary" class="btn btn-secondary">Copy summary</button></div>
+        <p id="share-status" class="status-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="premium-panel">
+        <div class="premium-copy"><p class="eyebrow light-eyebrow">YOUR NEXT STEP</p><h2>Put your experience in the best light.</h2><p>Get tailored support from Noel Talent Services to position your experience, improve your CV and prepare for your next opportunity.</p><div class="premium-services"><span>CV optimization</span><span>LinkedIn profile support</span><span>Interview preparation</span></div><a id="premium-email-link" class="btn btn-white" href="mailto:HR@noeltalents.com?subject=CV%20Optimization%20Enquiry">Enquire about premium support ↗</a><p class="premium-email-note">Email HR@noeltalents.com. Your email app will open with a draft enquiry.</p></div>
+        <div class="premium-mark" aria-hidden="true"><div class="premium-ring"></div><div class="premium-star">N</div><div class="premium-caption">CAREER<br>SUPPORT</div></div>
+      </section>
+      <div class="restart-row"><button id="restart-audit" class="text-button">← Start a new audit</button><a href="mailto:HR@noeltalents.com?subject=Question%20about%20my%20CV%20audit" class="text-button">Contact Noel Talent Services ↗</a></div>
+    </section>
+
+    <section id="exit-confirm" class="panel confirm-panel hidden" aria-labelledby="exit-title">
+      <h2 id="exit-title">Leave this audit?</h2><p>Your current answers are held only in this browser session. If you leave, the audit will restart when you return.</p>
+      <div class="form-actions"><button id="resume-audit" class="btn btn-secondary">Keep going</button><button id="confirm-exit" class="btn btn-primary">Return to start</button></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><span>© <span id="year"></span> Noel Talent Services</span><span>Practical career guidance, one step at a time.</span><a href="mailto:HR@noeltalents.com">HR@noeltalents.com</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
